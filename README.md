@@ -48,4 +48,4 @@ Note:
 We do not know how the threads will be scheduled in the operating system, even though the numbers in the input seems to imply the ordering. The input format you see is mainly to ensure our tests' comprehensiveness.  
 
 ---   
-**This challenge can be found on LeetCode.com under 'concurrency'*
+**The original challenge prompt can be found on LeetCode.com under 'concurrency > print in order'*
