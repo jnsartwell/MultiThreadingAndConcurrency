@@ -1,4 +1,4 @@
-package multithreading;
+package multithreading.system;
 
 class SystemWrapper implements ISystemWrapper {
 

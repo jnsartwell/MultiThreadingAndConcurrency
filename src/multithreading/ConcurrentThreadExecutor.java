@@ -1,14 +1,16 @@
 package multithreading;
 
+import multithreading.system.ISystemWrapper;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-class ConcurrencyThreading {
+class ConcurrentThreadExecutor {
 
     private ISystemWrapper systemWrapper;
 
-    ConcurrencyThreading(ISystemWrapper systemWrapper) {
+    ConcurrentThreadExecutor(ISystemWrapper systemWrapper) {
         this.systemWrapper = systemWrapper;
     }
 

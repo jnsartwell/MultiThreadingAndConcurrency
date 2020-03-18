@@ -1,5 +1,7 @@
 package multithreading;
 
+import multithreading.system.ISystemWrapper;
+
 public class MockSystemWrapper implements ISystemWrapper {
 
     private String printString = "";

@@ -2,7 +2,6 @@ package multithreading;
 
 class Foo {
 
-
     public Foo() {
     }
 
