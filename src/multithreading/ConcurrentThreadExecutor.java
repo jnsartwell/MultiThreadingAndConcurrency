@@ -21,12 +21,11 @@ class ConcurrentThreadExecutor {
     }
 
     private void startThreads(ExecutorService executorService, int[] threadOrder) {
-        Foo foo = new Foo();
         for (int i : threadOrder) {
             if (i == 1)
                 executorService.execute(() -> {
                     try {
-                        foo.first(() -> systemWrapper.print("first"));
+                        Foo.getInstance().first(() -> systemWrapper.print("first"));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -34,7 +33,7 @@ class ConcurrentThreadExecutor {
             if (i == 2)
                 executorService.execute(() -> {
                     try {
-                        foo.second(() -> systemWrapper.print("second"));
+                        Foo.getInstance().second(() -> systemWrapper.print("second"));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -42,7 +41,7 @@ class ConcurrentThreadExecutor {
             if (i == 3)
                 executorService.execute(() -> {
                     try {
-                        foo.third(() -> systemWrapper.print("third"));
+                        Foo.getInstance().third(() -> systemWrapper.print("third"));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

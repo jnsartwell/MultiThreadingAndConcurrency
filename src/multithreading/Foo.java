@@ -2,7 +2,20 @@ package multithreading;
 
 class Foo {
 
-    public Foo() {
+    private static Foo instance = null;
+
+    private Foo() {
+    }
+
+    public static Foo getInstance() {
+        if (instance == null) {
+            synchronized (Foo.class) {
+                if (instance == null) {
+                    instance = new Foo();
+                }
+            }
+        }
+        return instance;
     }
 
     public void first(Runnable printFirst) throws InterruptedException {
