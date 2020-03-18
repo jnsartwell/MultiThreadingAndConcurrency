@@ -4,66 +4,66 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MultithreadingConcurrencyTest {
+class MultithreadingConcurrencyTest {
 
     @Test
-    public void testCaseOne() throws Exception {
+    void testCaseOne() {
         MockSystemWrapper systemWrapper = new MockSystemWrapper();
         new ConcurrencyThreading(systemWrapper).execute(new int[]{1, 2, 3});
         assertEquals("firstsecondthird", systemWrapper.getPrintBuffer());
     }
 
     @Test
-    public void testCaseTwo() throws Exception {
+    void testCaseTwo() {
         MockSystemWrapper systemWrapper = new MockSystemWrapper();
         new ConcurrencyThreading(systemWrapper).execute(new int[]{1, 3, 2});
         assertEquals("firstsecondthird", systemWrapper.getPrintBuffer());
     }
 
     @Test
-    public void testCaseThree() throws Exception {
+    void testCaseThree() {
         MockSystemWrapper systemWrapper = new MockSystemWrapper();
         new ConcurrencyThreading(systemWrapper).execute(new int[]{2, 1, 3});
         assertEquals("firstsecondthird", systemWrapper.getPrintBuffer());
     }
 
     @Test
-    public void testCaseFour() throws Exception {
+    void testCaseFour() {
         MockSystemWrapper systemWrapper = new MockSystemWrapper();
         new ConcurrencyThreading(systemWrapper).execute(new int[]{2, 3, 1});
         assertEquals("firstsecondthird", systemWrapper.getPrintBuffer());
     }
 
     @Test
-    public void testCaseFive() throws Exception {
+    void testCaseFive() {
         MockSystemWrapper systemWrapper = new MockSystemWrapper();
         new ConcurrencyThreading(systemWrapper).execute(new int[]{3, 1, 2});
         assertEquals("firstsecondthird", systemWrapper.getPrintBuffer());
     }
 
     @Test
-    public void testCaseSix() throws Exception {
+    void testCaseSix() {
         MockSystemWrapper systemWrapper = new MockSystemWrapper();
         new ConcurrencyThreading(systemWrapper).execute(new int[]{3, 2, 1});
         assertEquals("firstsecondthird", systemWrapper.getPrintBuffer());
     }
 
     @Test
-    public void testCaseSeven() throws Exception {
+    void testCaseSeven() {
         MockSystemWrapper systemWrapper = new MockSystemWrapper();
         new ConcurrencyThreading(systemWrapper).execute(new int[]{1});
         assertEquals("first", systemWrapper.getPrintBuffer());
     }
 
     @Test
-    public void testCaseEight() throws Exception {
+    void testCaseEight() {
         MockSystemWrapper systemWrapper = new MockSystemWrapper();
         new ConcurrencyThreading(systemWrapper).execute(new int[]{1, 2});
         assertEquals("firstsecond", systemWrapper.getPrintBuffer());
     }
 
     @Test
-    public void testCaseNine() throws Exception {
+    void testCaseNine() {
         MockSystemWrapper systemWrapper = new MockSystemWrapper();
         new ConcurrencyThreading(systemWrapper).execute(new int[]{2, 1});
         assertEquals("firstsecond", systemWrapper.getPrintBuffer());

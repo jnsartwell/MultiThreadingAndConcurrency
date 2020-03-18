@@ -1,6 +1,5 @@
 package multithreading;
 
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -25,7 +24,7 @@ class ConcurrencyThreading {
             if (i == 1)
                 executorService.execute(() -> {
                     try {
-                        foo.first(() -> this.systemWrapper.print("first"));
+                        foo.first(() -> systemWrapper.print("first"));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -33,7 +32,7 @@ class ConcurrencyThreading {
             if (i == 2)
                 executorService.execute(() -> {
                     try {
-                        foo.second(() -> this.systemWrapper.print("second"));
+                        foo.second(() -> systemWrapper.print("second"));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -41,14 +40,12 @@ class ConcurrencyThreading {
             if (i == 3)
                 executorService.execute(() -> {
                     try {
-                        foo.third(() -> this.systemWrapper.print("third"));
+                        foo.third(() -> systemWrapper.print("third"));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 });
-
         }
-
     }
 
     private void awaitTerminationAfterShutdown(ExecutorService threadPool) {

@@ -9,7 +9,7 @@ public class MockSystemWrapper implements ISystemWrapper {
         printString = printString.concat(thingToPrint);
     }
 
-    public String getPrintBuffer() {
+    String getPrintBuffer() {
         return this.printString;
     }
 
