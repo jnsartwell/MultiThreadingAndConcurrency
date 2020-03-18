@@ -24,27 +24,15 @@ class ConcurrentThreadExecutor {
         for (int i : threadOrder) {
             if (i == 1)
                 executorService.execute(() -> {
-                    try {
-                        Foo.getInstance().first(() -> systemWrapper.print("first"));
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    Foo.getInstance().first(() -> systemWrapper.print("first"));
                 });
             if (i == 2)
                 executorService.execute(() -> {
-                    try {
-                        Foo.getInstance().second(() -> systemWrapper.print("second"));
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    Foo.getInstance().second(() -> systemWrapper.print("second"));
                 });
             if (i == 3)
                 executorService.execute(() -> {
-                    try {
-                        Foo.getInstance().third(() -> systemWrapper.print("third"));
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    Foo.getInstance().third(() -> systemWrapper.print("third"));
                 });
         }
     }

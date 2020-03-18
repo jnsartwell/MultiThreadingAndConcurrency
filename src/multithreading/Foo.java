@@ -7,7 +7,7 @@ class Foo {
     private Foo() {
     }
 
-    public static Foo getInstance() {
+    static Foo getInstance() {
         if (instance == null) {
             synchronized (Foo.class) {
                 if (instance == null) {
@@ -18,15 +18,15 @@ class Foo {
         return instance;
     }
 
-    public void first(Runnable printFirst) throws InterruptedException {
+    void first(Runnable printFirst) {
         printFirst.run();
     }
 
-    public void second(Runnable printSecond) throws InterruptedException {
+    void second(Runnable printSecond) {
         printSecond.run();
     }
 
-    public void third(Runnable printThird) throws InterruptedException {
+    void third(Runnable printThird) {
         printThird.run();
     }
 
