@@ -1,6 +1,6 @@
-package multithreading;
+package hard.multithreading;
 
-import multithreading.system.ISystemWrapper;
+import hard.multithreading.system.ISystemWrapper;
 
 public class MockSystemWrapper implements ISystemWrapper {
 
