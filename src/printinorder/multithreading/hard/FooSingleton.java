@@ -3,8 +3,12 @@ package printinorder.multithreading.hard;
 class FooSingleton {
 
     private static FooSingleton instance = null;
+    private boolean firstGateOpen, secondGateOpen, thirdGateOpen;
 
     private FooSingleton() {
+        firstGateOpen = true;
+        secondGateOpen = false;
+        thirdGateOpen = false;
     }
 
     static FooSingleton getInstance() {
@@ -18,16 +22,49 @@ class FooSingleton {
         return instance;
     }
 
-    void first(Runnable printFirst) {
+    synchronized void first(Runnable printFirst) {
+        while (!firstGateOpen) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         printFirst.run();
+        openGates(false, true, false);
+        notifyAll();
     }
 
-    void second(Runnable printSecond) {
+    synchronized void second(Runnable printSecond) {
+        while (!secondGateOpen) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         printSecond.run();
+        openGates(false, false, true);
+        notifyAll();
     }
 
-    void third(Runnable printThird) {
+    synchronized void third(Runnable printThird) {
+        while (!thirdGateOpen) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         printThird.run();
+        openGates(true, false, false);
+        notifyAll();
+    }
+
+    private void openGates(boolean openFirstGate, boolean openSecondGate, boolean openThirdGate) {
+        this.firstGateOpen = openFirstGate;
+        this.secondGateOpen = openSecondGate;
+        this.thirdGateOpen = openThirdGate;
     }
 
 }

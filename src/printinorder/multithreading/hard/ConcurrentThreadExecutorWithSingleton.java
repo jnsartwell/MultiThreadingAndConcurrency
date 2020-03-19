@@ -40,7 +40,7 @@ class ConcurrentThreadExecutorWithSingleton {
     private void awaitTerminationAfterShutdown(ExecutorService threadPool) {
         threadPool.shutdown();
         try {
-            if (!threadPool.awaitTermination(60, TimeUnit.SECONDS)) {
+            if (!threadPool.awaitTermination(1, TimeUnit.SECONDS)) {
                 threadPool.shutdownNow();
             }
         } catch (InterruptedException ex) {
