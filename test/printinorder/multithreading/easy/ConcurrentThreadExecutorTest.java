@@ -1,6 +1,7 @@
-package easy.multithreading;
+package printinorder.multithreading.easy;
 
 import org.junit.jupiter.api.Test;
+import printinorder.multithreading.MockSystemWrapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,6 +1,6 @@
-package easy.multithreading;
+package printinorder.multithreading.easy;
 
-import hard.multithreading.system.ISystemWrapper;
+import printinorder.multithreading.system.ISystemWrapper;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -1,4 +1,4 @@
-package hard.multithreading.system;
+package printinorder.multithreading.system;
 
 class SystemWrapper implements ISystemWrapper {
 

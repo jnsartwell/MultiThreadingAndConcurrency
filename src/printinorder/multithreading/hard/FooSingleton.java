@@ -1,4 +1,4 @@
-package hard.multithreading;
+package printinorder.multithreading.hard;
 
 class FooSingleton {
 

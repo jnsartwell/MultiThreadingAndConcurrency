@@ -1,11 +1,9 @@
-package easy.multithreading;
+package printinorder.multithreading.easy;
 
 class Foo {
 
     public  Foo() {
     }
-
-
 
     void first(Runnable printFirst) {
         printFirst.run();
