@@ -1,16 +1,11 @@
-package multithreading;
+package printinorder.multithreading.easy;
 
 import org.junit.jupiter.api.Test;
+import printinorder.multithreading.MockSystemWrapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
 
 class ConcurrentThreadExecutorTest {
-
-    @Test
-    public void fooIsASingleton() throws Exception {
-        assertSame(Foo.getInstance(), Foo.getInstance());
-    }
 
     @Test
     void testCaseOne() {

@@ -1,6 +1,6 @@
-package multithreading;
+package printinorder.multithreading;
 
-import multithreading.system.ISystemWrapper;
+import printinorder.multithreading.system.ISystemWrapper;
 
 public class MockSystemWrapper implements ISystemWrapper {
 
@@ -11,7 +11,7 @@ public class MockSystemWrapper implements ISystemWrapper {
         printString = printString.concat(thingToPrint);
     }
 
-    String getPrintBuffer() {
+    public String getPrintBuffer() {
         return this.printString;
     }
 

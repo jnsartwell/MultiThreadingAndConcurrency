@@ -1,6 +1,6 @@
-package multithreading;
+package printinorder.multithreading.easy;
 
-import multithreading.system.ISystemWrapper;
+import printinorder.multithreading.system.ISystemWrapper;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -21,18 +21,19 @@ class ConcurrentThreadExecutor {
     }
 
     private void startThreads(ExecutorService executorService, int[] threadOrder) {
+        Foo foo = new Foo();
         for (int i : threadOrder) {
             if (i == 1)
                 executorService.execute(() -> {
-                    Foo.getInstance().first(() -> systemWrapper.print("first"));
+                    foo.first(() -> systemWrapper.print("first"));
                 });
             if (i == 2)
                 executorService.execute(() -> {
-                    Foo.getInstance().second(() -> systemWrapper.print("second"));
+                    foo.second(() -> systemWrapper.print("second"));
                 });
             if (i == 3)
                 executorService.execute(() -> {
-                    Foo.getInstance().third(() -> systemWrapper.print("third"));
+                    foo.third(() -> systemWrapper.print("third"));
                 });
         }
     }

@@ -1,17 +1,17 @@
-package multithreading;
+package printinorder.multithreading.hard;
 
-class Foo {
+class FooSingleton {
 
-    private static Foo instance = null;
+    private static FooSingleton instance = null;
 
-    private Foo() {
+    private FooSingleton() {
     }
 
-    static Foo getInstance() {
+    static FooSingleton getInstance() {
         if (instance == null) {
-            synchronized (Foo.class) {
+            synchronized (FooSingleton.class) {
                 if (instance == null) {
-                    instance = new Foo();
+                    instance = new FooSingleton();
                 }
             }
         }
