@@ -5,7 +5,7 @@ import printinorder.multithreading.MockSystemWrapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ConcurrentThreadExecutorWithSingletonWithSingletonTest {
+class ConcurrentThreadExecutorWithSingletonTest {
 
     @Test
     void testCaseOne() {
