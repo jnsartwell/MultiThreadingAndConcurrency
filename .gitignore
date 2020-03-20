@@ -2,3 +2,4 @@
 out/
 ExternalLibraries/
 *.iml
+/bin/
