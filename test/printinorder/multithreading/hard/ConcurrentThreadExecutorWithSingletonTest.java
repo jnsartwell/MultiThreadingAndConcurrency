@@ -71,4 +71,19 @@ class ConcurrentThreadExecutorWithSingletonTest {
     }
 
 
+    @Test
+    void testCaseTen() {
+        MockSystemWrapper systemWrapper = new MockSystemWrapper();
+        new ConcurrentThreadExecutorWithSingleton(systemWrapper).execute(new int[]{2, 3});
+        assertEquals("secondthird", systemWrapper.getPrintBuffer());
+    }
+
+    @Test
+    void testCaseEleven() {
+        MockSystemWrapper systemWrapper = new MockSystemWrapper();
+        new ConcurrentThreadExecutorWithSingleton(systemWrapper).execute(new int[]{1, 3});
+        assertEquals("firstthird", systemWrapper.getPrintBuffer());
+    }
+
+
 }

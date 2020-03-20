@@ -25,8 +25,6 @@ class ConcurrentThreadExecutor {
         Foo foo = new Foo();
         ThreadCoordinator coordinator = new ThreadCoordinator();
 
-        Arrays.sort(threadOrder);
-
         for (int i : threadOrder) {
             if (i == 1)
                 executorService.execute(() -> foo.first(() -> {
